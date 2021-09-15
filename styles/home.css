@@ -17,6 +17,7 @@ header {
 
   background: url(../assets/images/bg-person.svg) top/contain;
   background-repeat: no-repeat;
+  background-position-x: -10rem;
 }
 
 main {
@@ -24,10 +25,12 @@ main {
 
   display: flex;
   align-items: center;
+
+  margin-top: -12rem;
 }
 
 main .content {
-  width: min(36.3rem 100%);
+  width: min(36.3rem, 100%);
 }
 
 main h2 {
@@ -50,4 +53,52 @@ input {
   border: 2px solid var(--grey-blue);
 
   padding: 0 1.6rem;
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+
+  margin: 4rem 0;
+}
+
+.separator div:nth-child(1),
+.separator div:nth-child(3) {
+  background-color: var(--grey-blue);
+
+  height: 1px;
+  width: 100%;
+}
+
+.separator div:nth-child(2) {
+  font-family: 'Poppins', sans-serif;
+  color: var(--grey-blue);
+  font-weight: 400;
+
+  padding: 0 1.34rem;
+  line-height: 0;
+}
+
+.ball {
+  background-color: var(--blue);
+  opacity: 0.1;
+
+  width: 21.2rem;
+  height: 21.2rem;
+
+  position: fixed;
+
+  clip-path: circle();
+}
+
+.ball.top {
+  top: -11rem;
+  right: -30rem;
+
+  width: 63.3rem;
+}
+
+.ball.bottom {
+  right: 5.6rem;
+  bottom: -15rem;
 }
