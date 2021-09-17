@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" href="./styles/global.css" />
     <link rel="stylesheet" href="./styles/room.css" />
+    <link rel="stylesheet" href="./styles/modal.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -145,6 +146,28 @@
           </div>
         </section>
       </main>
+    </div>
+
+    <!---------------------MODAL---------------------->
+
+    <div class="modal-wrapper">
+      <div class="modal">
+        <h2>Excluir pergunta?</h2>
+        <p>Tem certeza que deseja excluir essa pergunta?</p>
+        <form action="#">
+          <label for-id="password" class="sr-only">Digite sua senha adm</label>
+          <input
+            id="password"
+            type="password"
+            name="password"
+            placeholder="Digite sua senha"
+          />
+          <div class="buttons">
+            <div class="button grey">Cancelar</div>
+            <button class="red">Sim, excluir</button>
+          </div>
+        </form>
+      </div>
     </div>
   </body>
 </html>

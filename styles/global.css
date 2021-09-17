@@ -119,3 +119,31 @@ button.outlined > img {
 
   width: 2rem;
 }
+
+button.red,
+.button.red {
+  color: var(--white);
+
+  background-color: var(--red);
+
+  border-radius: 0.8rem;
+
+  cursor: pointer;
+}
+
+button.grey,
+.button.grey {
+  background-color: var(--grey-light);
+
+  color: var(--black);
+
+  cursor: pointer;
+
+  transition: 0.2rem;
+}
+
+button.grey:hover,
+.button.grey:hover {
+  background-color: var(--grey-dark);
+  color: var(--white);
+}
