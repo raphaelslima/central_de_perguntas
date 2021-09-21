@@ -1,0 +1,27 @@
+{
+  "name": "Central_de_perguntas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "nodemon ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raphaelslima/central_de_perguntas.git"
+  },
+  "keywords": [],
+  "author": "Raphael Lima",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/raphaelslima/central_de_perguntas/issues"
+  },
+  "homepage": "https://github.com/raphaelslima/central_de_perguntas#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
