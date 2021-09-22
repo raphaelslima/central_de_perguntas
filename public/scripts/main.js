@@ -20,7 +20,16 @@ deleteButton.forEach(button => {
 })
 
 function handleclick(e, check = true) {
-  let text = check ? 'Marcar como lida ' : 'Excluir'
+  e.preventDefault()
+  const text = check ? 'Marcar como lida ' : 'Excluir'
+
+  const slug = check ? 'check' : 'delete'
+  const roomId = document.querySelector('#id-room').dataset.id
+  const questionId = e.target.dataset.id
+
+  const form = document.querySelector('.modal form')
+  form.setAttribute('action', `/question/${roomId}/${questionId}/${slug}`)
+
   modalTitle.innerHTML = `${text} essa pergunta?`
   modalDescription.innerHTML = `Tem certeza que deseja ${text.toLocaleLowerCase()} essa pergunta?`
   modalButton.innerHTML = `Sim, ${text}`
