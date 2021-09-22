@@ -5,61 +5,29 @@ const modal = new Modal()
 const modalTitle = document.querySelector('.modal h2')
 const modalDescription = document.querySelector('.modal p')
 const modalButton = document.querySelector('.modal button')
-const modalPag = document.querySelector('.modal')
 
-////////////////// MARCAR COMO LIDA /////////////////////
-document.querySelectorAll('.check').forEach(e => {
-  e.addEventListener('click', () => {
-    modalTitle.innerText = 'Marcar como lida?'
-    modalDescription.innerText = 'Tem certeza que deseja marcar como lida?'
+const checkButtons = document.querySelectorAll('.actions a.check')
+const cancelButtons = document.querySelector('.modal .cancel')
 
-    modalButton.innerText = 'Sim'
-    modalButton.classList.remove('red')
-
-    modal.open()
-    let check = e
-
-    let questionsWrapper = e.parentElement.parentElement
-
-    modalPag.addEventListener('click', e => {
-      const el = e.target
-      if (el.classList.contains('confirm')) {
-        questionsWrapper.classList.add('read')
-        check.innerHTML = ''
-        modal.close()
-      }
-      if (el.classList.contains('cancel')) {
-        questionsWrapper = null
-        modal.close()
-      }
-    })
-  })
+checkButtons.forEach(button => {
+  button.addEventListener('click', handleclick)
 })
 
-///////////////////// EXCLUIR ///////////////////////
+const deleteButton = document.querySelectorAll('.actions a.delete')
 
-document.querySelectorAll('.delete').forEach(e => {
-  e.addEventListener('click', () => {
-    modalTitle.innerText = 'Excluir a pergunta?'
-    modalDescription.innerText = 'Tem certeza que deseja excluir a pergunta?'
+deleteButton.forEach(button => {
+  button.addEventListener('click', e => handleclick(e, false))
+})
 
-    modalButton.innerText = 'Sim,excluir'
-    modalButton.classList.add('red')
+function handleclick(e, check = true) {
+  let text = check ? 'Marcar como lida ' : 'Excluir'
+  modalTitle.innerHTML = `${text} essa pergunta?`
+  modalDescription.innerHTML = `Tem certeza que deseja ${text.toLocaleLowerCase()} essa pergunta?`
+  modalButton.innerHTML = `Sim, ${text}`
+  check ? modalButton.classList.remove('red') : modalButton.classList.add('red')
+  modal.open()
+}
 
-    modal.open()
-
-    let questionsWrapper = e.parentElement.parentElement
-
-    modalPag.addEventListener('click', e => {
-      const el = e.target
-      if (el.classList.contains('confirm')) {
-        questionsWrapper.remove()
-        modal.close()
-      }
-      if (el.classList.contains('cancel')) {
-        questionsWrapper = null
-        modal.close()
-      }
-    })
-  })
+cancelButtons.addEventListener('click', () => {
+  modal.close()
 })
