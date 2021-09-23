@@ -13,6 +13,7 @@ route.get('/create-pass', (req, res) =>
 /* ROTAS DE SALA */
 route.get('/room/:room', RoomController.open)
 route.post('/create-room', RoomController.create)
+route.post('/enterroom', RoomController.enter)
 
 /* ROTAS DE PERGUNTAS */
 route.post('/question/create/:room', QuestionController.create)
