@@ -23,8 +23,8 @@
           <img src="/assets/images/logo.svg" alt="rocket.q Logo" />
         </a>
         <div class="buttons">
-          <div class="button outlined" id="id-room" data-id="12345">
-            #12345
+          <div class="button outlined" id="id-room" data-id="<%- roomId %>">
+            #<%- roomId %>
             <img src="/assets/images/copy 1.svg" alt="Copiar número da sala" />
           </div>
           <a href="#" class="button">
@@ -36,7 +36,7 @@
       <main>
         <section id="question-form">
           <h2>Faça sua pergunta</h2>
-          <form action="#">
+          <form action="/question/create/<%= roomId %>" method="POST">
             <label for-id="question" class="sr-only"
               >O que você quer perguntar?</label
             >
@@ -127,14 +127,8 @@
                 </div>
                 <div class="question">
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Quo atque et nulla culpa, quasi, provident eius iure ut
-                    voluptate officia ad optio ratione ducimus omnis quae eos
-                    eligendi maxime distinctio. Lorem, ipsum dolor sit amet
-                    consectetur adipisicing elit. Consequatur voluptatum, minus
-                    consequuntur distinctio non fugit, voluptate nostrum
-                    laudantium saepe quaerat temporibus deserunt earum unde
-                    debitis natus. Tenetur consectetur possimus sapiente?
+                    Por qual linguagem de programação eu devo começar para estar
+                    preparado para o mercado de trabalho ?
                   </p>
                 </div>
               </div>
