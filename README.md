@@ -25,6 +25,9 @@ Esse sistema é uma central de perguntas, no qual, um usuário pode criar uma sa
 para que somente os usuários com esse ID consigam ter acesso. Na sala qualquer usuário pode realizar perguntas ou comentários, mas somente os usuários 
 com conhecimento da senha podem excluir ou  marcar como lida uma pergunta.
 
+OBS: Para entrar em uma sala precisa ter previamente criado uma sala e salvado seu ID, a modal de aviso para usuáros que estão tentando entrar na sala errada 
+está em construção.
+
 ## Por que esse sistema?
 
 Esse sistema foi realizado por mim para desenvolvimento do portfólio pessoal, com esse projeto consegui aprender sobre como criar controladores para as rotas
