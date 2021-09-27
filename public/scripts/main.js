@@ -2,6 +2,7 @@ import Modal from './modal.js'
 
 const modal = new Modal()
 
+// DATA INITIAL
 const modalTitle = document.querySelector('.modal h2')
 const modalDescription = document.querySelector('.modal p')
 const modalButton = document.querySelector('.modal button')
@@ -9,15 +10,26 @@ const modalButton = document.querySelector('.modal button')
 const checkButtons = document.querySelectorAll('.actions a.check')
 const cancelButtons = document.querySelector('.modal .cancel')
 
+const copyButton = document.querySelector('.buttons div.button')
+
+const deleteButton = document.querySelectorAll('.actions a.delete')
+
+//EVNTS
+copyButton.addEventListener('click', copy)
+
+cancelButtons.addEventListener('click', () => {
+  modal.close()
+})
+
 checkButtons.forEach(button => {
   button.addEventListener('click', handleclick)
 })
 
-const deleteButton = document.querySelectorAll('.actions a.delete')
-
 deleteButton.forEach(button => {
   button.addEventListener('click', e => handleclick(e, false))
 })
+
+//FUNCTIONS
 
 function handleclick(e, check = true) {
   e.preventDefault()
@@ -37,6 +49,8 @@ function handleclick(e, check = true) {
   modal.open()
 }
 
-cancelButtons.addEventListener('click', () => {
-  modal.close()
-})
+async function copy() {
+  const idAcess = document.querySelector('.buttons div.button ').innerText
+  console.log(idAcess)
+  await navigator.clipboard.writeText(idAcess)
+}
